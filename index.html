@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="animalButton">
+
+    </div>
+
+    <form id="animal-form">
+        <label for "animal-input">Add an animal</label>
+        <input type="text" id="animal-input">
+        <br>
+        <input id="addAnimal" type="submit" value="submit">
+    </form>
+    <div id="animals">
+
+    </div>
+
+
+    <!--<div>
+        <div id="buttons">
+            <button data-animal="dogs">
+                doggos
+            </button>
+            <button data-animal="cats">
+                cats
+            </button> -->
+
+    <!--<button data-animal="mongoose">
+                mongoose
+            </button>
+            <button data-animal="ducks">
+                ducks
+            </button>
+            <button data-animal="racoons">
+                trash pandas
+            </button>
+        </div> -->
+
+    <div id="gifs-appear-here">
+    </div>
+<!-- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        var animals = ["dogs", "cats", "mongoose", "ducks", "racoons"];
+
+        $("button").on("click", function () {
+            var animal = $(this).attr("data-animal");
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+                animal + "&api_key=dc6zaTOxFJmzC&limit=10";
+            console.log(animal);
+
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            })
+                .then(function (response) {
+                    var results = response.data;
+
+                    for (var i = 0; i < results.length; i++) {
+                        var gifDiv = $("<div class='item'>");
+
+                        var rating = results[i].rating;
+
+                        var p = $("<p>").text("Rating: " + rating);
+
+                        var animalImage = $("<img>");
+                        animalImage.attr("src", results[i].images.fixed_height.url);
+
+                        gifDiv.prepend(p);
+                        gifDiv.prepend(animalImage);
+
+                        $("#gifs-appear-here").prepend(gifDiv);
+                    }
+                });
+        });
+        //$("#buttons").on("click", function () {
+
+            var state = $(this).attr("data-state");
+
+            if (state === "still") {
+                $(this).attr("src", $(this).attr("data-animate"));
+                $(this).attr("data-state", "animate");
+            } else {
+                $(this).attr("src", $(this).attr("data-still"));
+                $(this).attr("data-state", "still");
+
+                function renderButtons() {
+
+                    // Deleting the animals prior to adding new animals
+                    // (this is necessary otherwise you will have repeat buttons)
+                    $("#buttons-view").empty();
+
+                    // Looping through the array of movies
+                    for (var i = 0; i < animals.length; i++) {
+
+                        
+                        var a = $("<button>");
+                        // Adding a class of animal-btn to our button
+                        a.addClass("animal-btn");
+                        // Adding a data-attribute
+                        a.attr("data-animal", animals[i]);
+                        // Providing the initial button text
+                        a.text(animals[i]);
+                        // Adding the button to the buttons-view div
+                        $("#buttons-view").append(a);
+
+                        // This function handles events where a animal button is clicked
+                        $("#add-animals").on("click", function (event) {
+                            event.preventDefault();
+                            // This line grabs the input from the textbox
+                            var animals = $("#animal-input").val().trim();
+
+                            // Adding animal from the textbox to our array
+                            animals.push(animal);
+
+                            // Calling renderButtons which handles the processing of our animal array
+                            renderButtons();
+                        });
+
+                        // Adding a click event listener to all elements with a class of "animal-btn"
+                        $(document).on("click", ".animal-btn",);
+
+                        // Calling the renderButtons function to display the intial buttons
+                        renderButtons();
+                    }
+                }
+            } -->
+         <!-- }); --> 
+    <!-- </script> -->
+</body>
+
+</html>
